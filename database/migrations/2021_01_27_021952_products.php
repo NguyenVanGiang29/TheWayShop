@@ -23,9 +23,12 @@ class Products extends Migration
             $table->integer('is_hot');
             $table->integer('is_sale');
             $table->timestamps();
-
             $table->foreign('cate_id')->references('id')->on('Categoris')->onDelete('cascade');
         });
+
+        // Schema::table('Products', function (Blueprint $table){
+        //     $table->string('image',50);
+        // });
     }
 
     /**
@@ -36,5 +39,6 @@ class Products extends Migration
     public function down()
     {
         Schema::dropIfExists('Products');
+        
     }
 }

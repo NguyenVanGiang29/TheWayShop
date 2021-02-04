@@ -33,4 +33,6 @@ class Product extends Model
     public function Cart(){
         return $this->hasMany('App\Models\Cart','prd_id','id');
     }
+
+    
 }

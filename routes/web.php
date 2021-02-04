@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Product;
 use App\Models\Category;
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,12 +19,8 @@ use App\Models\Category;
 |
 */
 
-Route::get('home', function () {
+Route::get('home1', function () {
     return view('pages.home');
-});
-
-Route::get('home/shop', function() {
-    return view('pages.shop');
 });
 
 Route::get('home/shop-detail', function() {
@@ -29,6 +29,21 @@ Route::get('home/shop-detail', function() {
 
 
 Route::get('testdb', function () {
-    $prd = Category::find(4)->Product;
-    echo $prd;
+    // $prd = Product::find(4)->Image;
+    // echo $prd;
+    // $prd = DB::table('Products')
+    //             ->join('Images','Products.id', '=', 'Images.prd_id')
+    //             ->where('Products.is_hot',1)
+    //             ->get();
+    $coutprd = Product::where('cate_id', 4)->count();
+                    
+    echo $coutprd;
 });
+
+Route::get('home', [HomeController::class, 'index'])->name('home');
+
+Route::resource('product', 'App\Http\Controllers\ProductController');
+
+Route::get('home/shop', [ShopController::class, 'show'])->name('shop');
+
+Route::get('search', [HomeController::class, 'search'])->name('search');

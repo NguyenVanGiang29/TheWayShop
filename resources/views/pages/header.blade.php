@@ -19,52 +19,18 @@
                     <li class="nav-item"><a class="nav-link" href="home/shop">Cửa hàng</a></li>
                     <li class="dropdown megamenu">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
-                        <ul class="dropdown-menu megamenu-content" role="menu">
+                        <ul class="dropdown-menu" role="menu">
                             <li>
                                 <div class="row">
                                     <div class="col-menu col-md-3">
-                                        <h6 class="title">Top</h6>
+                                       
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="shop.html">Jackets</a></li>
-                                                <li><a href="shop.html">Shirts</a></li>
-                                                <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                                <li><a href="shop.html">T-shirts</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Bottom</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Swimwear</a></li>
-                                                <li><a href="shop.html">Skirts</a></li>
-                                                <li><a href="shop.html">Jeans</a></li>
-                                                <li><a href="shop.html">Trousers</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Clothing</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Top Wear</a></li>
-                                                <li><a href="shop.html">Party wear</a></li>
-                                                <li><a href="shop.html">Bottom Wear</a></li>
-                                                <li><a href="shop.html">Indian Wear</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Accessories</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="shop.html">Bags</a></li>
-                                                <li><a href="shop.html">Sunglasses</a></li>
-                                                <li><a href="shop.html">Fragrances</a></li>
-                                                <li><a href="shop.html">Wallets</a></li>
+                                                <li><a href="shop.html">Quần</a></li>
+                                                <li><a href="shop.html">Áo</a></li>
+                                                <li><a href="shop.html">Đồng hồ</a></li>
+                                                <li><a href="shop.html">Giày</a></li>
+                                       
                                             </ul>
                                         </div>
                                     </div>

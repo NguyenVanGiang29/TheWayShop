@@ -25,19 +25,19 @@
             <div class="col-xl-5 col-lg-5 col-md-6">
                 <div id="carousel-example-1" class="single-product-slider carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active"> <img class="d-block w-100" src="images/big-img-01.jpg" alt="First slide"> </div>
-                        <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-02.jpg" alt="Second slide"> </div>
-                        <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-03.jpg" alt="Third slide"> </div>
+                       <img class="d-block w-100" src="images/{{ $prd->image }}" alt="First slide">
+                        {{-- <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-02.jpg" alt="Second slide"> </div>
+                        <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-03.jpg" alt="Third slide"> </div> --}}
                     </div>
                     <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev"> 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="sr-only">Previous</span> 
-                </a>
+                    </a>
                     <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next"> 
                     <i class="fa fa-angle-right" aria-hidden="true"></i> 
                     <span class="sr-only">Next</span> 
-                </a>
-                    <ol class="carousel-indicators">
+                    </a>
+                    {{-- <ol class="carousel-indicators">
                         <li data-target="#carousel-example-1" data-slide-to="0" class="active">
                             <img class="d-block w-100 img-fluid" src="images/smp-img-01.jpg" alt="" />
                         </li>
@@ -47,18 +47,18 @@
                         <li data-target="#carousel-example-1" data-slide-to="2">
                             <img class="d-block w-100 img-fluid" src="images/smp-img-03.jpg" alt="" />
                         </li>
-                    </ol>
+                    </ol> --}}
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
                 <div class="single-product-details">
-                    <h2>Tên sản phẩm</h2>
-                    <h5> <del>$ 60.00</del> $40.79</h5>
+                    <h2>{{$prd->name_prd}}</h2>
+                    <h5>{{$prd->price}}.000 đồng</h5>
+                    {{-- <del>$ 60.00</del> --}}
                     <p class="available-stock"><span> More than 20 available / <a href="#">8 sold </a></span>
                         <p>
                             <h4>Giới thiệu sản phẩm</h4>
-                            <p>Nam sagittis a augue eget scelerisque. Nullam lacinia consectetur sagittis. Nam sed neque id eros fermentum dignissim quis at tortor. Nullam ultricies urna quis sem sagittis pharetra. Nam erat turpis, cursus in ipsum at,
-                                tempor imperdiet metus. In interdum id nulla tristique accumsan. Ut semper in quam nec pretium. Donec egestas finibus suscipit. Curabitur tincidunt convallis arcu. </p>
+                            <p>{{$prd->description}}</p>
                             <ul>
                                 <li>
                                     <div class="form-group size-st">
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-                 <!-- Start Products  -->
+<!-- Start Products  -->
 <div class="products-box">
     <div class="container">
         <div class="row">
@@ -116,138 +116,48 @@
                 </div>
             </div>
         </div>
-        <div class="row special-list">
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Hot</p>
-                        </div>
-                        <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"> </i></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+                        <button>Nổi bật</button>
+                        <button>Giảm giá</button>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Hot</p>
-                        </div>
-                        <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Hot</p>
-                        </div>
-                        <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
-                               
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Hot</p>
-                        </div>
-                        <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
-                                
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Hot</p>
-                        </div>
-                        <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
-                               
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $10.79</h5>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
+        <div class="row special-list">
+            @foreach ($prd_hot as $prd_hots)
+            <div class="col-lg-3 col-md-6 special-grid top-featured">
+                
                 <div class="products-single fix">
                     <div class="box-img-hover">
+                    
                         <div class="type-lb">
                             <p class="sale">Hot</p>
                         </div>
-                        <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                        <img src="images/{{ $prd_hots->image }}" class="img-fluid" alt="Image">
                         <div class="mask-icon">
                             <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-clipboard-list"></i></a></li>
-                                
+                                <li><a href="{{ route('product.show', $prd_hots->id) }}" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"> </i></li>
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
                             </ul>
                             <a class="cart" href="#">Thêm vào giỏ</a>
                         </div>
                     </div>
                     <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $15.79</h5>
+                        <h4>{{$prd_hots->name_prd}}</h4>
+                        <h5>{{$prd_hots->price}}.000 đồng</h5>
                     </div>
+                    
                 </div>
+               
             </div>
+            @endforeach
+           
+           
+            
         </div>
     </div>
 </div>

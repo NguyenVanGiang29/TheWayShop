@@ -55,7 +55,7 @@
 									<option value="4">Giảm giá</option>
 								</select>
                                 </div>
-                                <p>Kết quả tìm kiếm 4</p>
+                                <p>Kết quả tìm kiếm {{ $countprd }}</p>
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
