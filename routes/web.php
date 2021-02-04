@@ -47,3 +47,7 @@ Route::resource('product', 'App\Http\Controllers\ProductController');
 Route::get('home/shop', [ShopController::class, 'show'])->name('shop');
 
 Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('home/sale', [ShopController::class, 'sale'])->name('sale');
+
+Route::get('home/shop/product/{id}', [ShopController::class, 'getPrdfolCate']);

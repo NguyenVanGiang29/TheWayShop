@@ -9,7 +9,7 @@
                     <h2>Cửa hàng</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="home">Trang chủ</a></li>
-                        <li class="breadcrumb-item active">Cửa hàng</li>
+                        <li class="breadcrumb-item active">Giảm giá</li>
                     </ul>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 									<option value="4">Giảm giá</option>
 								</select>
                                 </div>
-                                <p>Kết quả tìm kiếm 4</p>
+                    
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
@@ -73,39 +73,25 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
-                                        @foreach ($prd  as $prd)
+                                        @foreach ($prd_sale  as $prd_sale)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    @if( $prd->is_hot == 1 && $prd->is_sale == 1)
+                                                <div class="box-img-hover">                                                                           
                                                     <div class="type-lb">
-                                                        <p class="sale">Hot</p>
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">SALE</p>
                                                     </div>
-            
-                                                    @elseif( $prd->is_hot == 1)
-                                                    <div class="type-lb">
-                                                        <p class="sale">Hot</p>
-                                                    </div>
-                                                    @elseif( $prd->is_sale == 1)
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    @else                                               
-                                                        <p class="sale"></p>
-                                                    @endif
-                                                    <img src="images/{{ $prd->image }}" class="img-fluid" alt="Image">
+                                                    <img src="images/{{ $prd_sale->image }}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="{{ route('product.show', $prd->id) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                            <li><a href=" {{ route('product.show', $prd_sale->id) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
                                                         <a class="cart" href="#">Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4>{{ $prd->name_prd }}</h4>
-                                                    <h5>{{ $prd->price }}.000 đồng</h5>
+                                                    <h4>{{ $prd_sale->name_prd }}</h4>
+                                                    <h5>{{ $prd_sale->price }}.000 đồng</h5>
                                                 </div>
                                             </div>
                                         </div>

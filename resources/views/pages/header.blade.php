@@ -41,7 +41,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giảm giá</a>
+                        <a href="{{ route('sale') }}" class="nav-link dropdown-toggle" data-toggle="dropdown">Giảm giá</a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">Giới thiêụ</a></li>
                     <li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>

@@ -55,7 +55,7 @@
 									<option value="4">Giảm giá</option>
 								</select>
                                 </div>
-                                <p>Kết quả tìm kiếm 4</p>
+                    
                             </div>
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
@@ -76,28 +76,14 @@
                                         @foreach ($prd  as $prd)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
-                                                <div class="box-img-hover">
-                                                    @if( $prd->is_hot == 1 && $prd->is_sale == 1)
+                                                <div class="box-img-hover">                                                                           
                                                     <div class="type-lb">
-                                                        <p class="sale">Hot</p>
-                                                        <p class="sale">Sale</p>
+                                                        <p class="sale">SALE</p>
                                                     </div>
-            
-                                                    @elseif( $prd->is_hot == 1)
-                                                    <div class="type-lb">
-                                                        <p class="sale">Hot</p>
-                                                    </div>
-                                                    @elseif( $prd->is_sale == 1)
-                                                    <div class="type-lb">
-                                                        <p class="sale">Sale</p>
-                                                    </div>
-                                                    @else                                               
-                                                        <p class="sale"></p>
-                                                    @endif
                                                     <img src="images/{{ $prd->image }}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
-                                                            <li><a href="{{ route('product.show', $prd->id) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                            <li><a href=" {{ route('product.show', $prd->id) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
                                                         <a class="cart" href="#">Thêm vào giỏ</a>
