@@ -9,7 +9,7 @@
             <div class="col-lg-12">
                 <h2>Chi tiết sản phẩm</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="home">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Sản phẩm chi tiết </li>
                 </ul>
             </div>
@@ -51,6 +51,8 @@
                 </div>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-6">
+                <Form method="POST" action="home/addcart/{{ $prd->id }}">
+                    @csrf
                 <div class="single-product-details">
                     <h2>{{$prd->name_prd}}</h2>
                     <h5>{{$prd->price}}.000 đồng</h5>
@@ -60,7 +62,7 @@
                             <h4>Giới thiệu sản phẩm</h4>
                             <p>{{$prd->description}}</p>
                             <ul>
-                                <li>
+                                {{-- <li>
                                     <div class="form-group size-st">
                                         <label class="size-label">Kích cỡ</label>
                                         <select id="basic" class="selectpicker show-tick form-control">
@@ -74,18 +76,18 @@
                                 <option value="1">4XL</option>
                             </select>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <div class="form-group quantity-box">
                                         <label class="control-label">Số lượng</label>
-                                        <input class="form-control" value="0" min="0" max="20" type="number">
+                                        <input class="form-control" value="1" min="0" max="20" type="number" name="quality">
                                     </div>
                                 </li>
                             </ul>
 
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Thêm vào giỏ</a>
+                                    <button type="submit" class="btn hvr-hover" >Thêm vào giỏ</button>
                                 </div>
                             </div>
 
@@ -103,6 +105,7 @@
                                 </div>
                             </div>
                 </div>
+                </Form>
             </div>
         </div>
 
@@ -143,7 +146,12 @@
                                 <li><a href="{{ route('product.show', $prd_hots->id) }}" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"> </i></li>
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
                             </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
+                            @guest
+                                <a class="cart" href="#modalLogin" data-toggle="modal">Thêm vào giỏ</a>
+                            @endguest
+                            @auth
+                                <a class="cart" href="home/addcart/{{ $prd_hots->id}}">Thêm vào giỏ</a>
+                            @endauth
                         </div>
                     </div>
                     <div class="why-text">

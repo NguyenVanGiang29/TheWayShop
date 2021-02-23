@@ -40,7 +40,13 @@
                                 <li><a href="{{ route('product.show', $prd_hots->id) }}" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"> </i></li>
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
                             </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
+                            @guest
+                                <a class="cart" href="#modalLogin" data-toggle="modal">Thêm vào giỏ</a>
+                            @endguest
+                            @auth
+                                <a class="cart" href="home/cart">Thêm vào giỏ</a>
+                            @endauth
+                            
                         </div>
                     </div>
                     <div class="why-text">
@@ -92,11 +98,16 @@
                         <img src="images/{{ $prd_sales->image }}" class="img-fluid" alt="Image">
                         <div class="mask-icon">
                             <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="{{ route('product.show', $prd_sales->id) }}" data-toggle="tooltip" data-placement="right" title="Xem"><i class="fas fa-eye"></i></a></li>
                                 
                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Yêu thích"><i class="far fa-heart"></i></a></li>
                             </ul>
-                            <a class="cart" href="#">Thêm vào giỏ</a>
+                            @guest
+                                <a class="cart" href="#modalLogin" data-toggle="modal">Thêm vào giỏ</a>
+                            @endguest
+                            @auth
+                            <a class="cart" href="home/cart">Thêm vào giỏ</a>
+                            @endauth
                         </div>
                     </div>
                     <div class="why-text">
@@ -112,5 +123,7 @@
     </div>
 </div>
 <!-- End Product Selling -->
+
+
 
 @endsection

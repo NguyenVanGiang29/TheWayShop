@@ -15,3 +15,10 @@ function getCategory(){
         echo $cate->name_cate.'<br>';
     }
 }
+
+// function getTotal(){
+//     $price = DB::table('carts')->where('user_id', Auth::id())->get('price_prd');
+    
+//         echo $price;
+// }
+

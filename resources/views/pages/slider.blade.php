@@ -6,9 +6,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
-                        <p class="m-b-40">Text <br>...</p>
-                        <p><a class="btn hvr-hover" href="#">Shop</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> DangShop</strong></h1>
+                        <p class="m-b-40">Luôn luôn sẵn sàng chào đón mọi người <br>Xin hãy làm khách hàng của chúng tôi</p>
+                        {{-- <p><a class="btn hvr-hover" href="#">Shop</a></p> --}}
                     </div>
                 </div>
             </div>
@@ -18,9 +18,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Thewayshop</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> DangShop</strong></h1>
                         <p class="m-b-40"><br></p>
-                        <p><a class="btn hvr-hover" href="#">Shop</a></p>
+                        {{-- <p><a class="btn hvr-hover" href="#">Shop</a></p> --}}
                     </div>
                 </div>
             </div>

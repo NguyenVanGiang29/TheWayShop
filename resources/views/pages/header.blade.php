@@ -15,10 +15,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="home">Trang chủ</a></li>
                     <li class="nav-item"><a class="nav-link" href="home/shop">Cửa hàng</a></li>
                     <li class="dropdown megamenu">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
+                        <a href="home/shop" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <div class="row">
@@ -43,9 +43,9 @@
                     <li class="dropdown">
                         <a href="{{ route('sale') }}" class="nav-link dropdown-toggle" data-toggle="dropdown">Giảm giá</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Giới thiêụ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Liên lạc</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home/about">Giới thiêụ</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li> --}}
+                    <li class="nav-item"><a class="nav-link" href="home/contact ">Liên lạc</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -53,47 +53,113 @@
             <!-- Start Atribute Navigation -->
             <div class="attr-nav">
                 <ul>
-                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                    <li class="side-menu"><a href="#">
-                    <i class="fa fa-shopping-bag"></i>
-                        <span class="badge">3</span>
-                </a></li>
+                    <li class="search"><a href=""><i class="fa fa-search"></i></a></li>
+                    <li>
+                        @guest
+                            <a href="#modalLogin" data-toggle="modal">
+                                <i class="fa fa-shopping-bag"></i>
+                                    
+                            </a>
+                        @endguest
+                        @auth
+                            <a href="home/cart">
+                                <i class="fa fa-shopping-bag"></i>
+                                    <span class="badge">3</span>
+                            </a>
+                        @endauth
+                        
+                    </li>
+                    @guest
+                        <li><a class="cart" href="#modalLogin" data-toggle="modal">Đăng nhập</a></li>
+                    @endguest
+                    @auth
+                        <li><a href="logout">Đăng xuất</a></li>
+                    @endauth
                 </ul>
             </div>
             <!-- End Atribute Navigation -->
         </div>
-        <!-- Start Side Menu -->
-        <div class="side">
-            <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-            <li class="cart-box">
-                <ul class="cart-list">
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Delica omtantur </a></h6>
-                        <p>1x - <span class="price">$80.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Omnes ocurreret</a></h6>
-                        <p>1x - <span class="price">$60.00</span></p>
-                    </li>
-                    <li>
-                        <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                        <h6><a href="#">Agam facilisis</a></h6>
-                        <p>1x - <span class="price">$40.00</span></p>
-                    </li>
-                    <li class="total">
-                        <a href="#" class="btn btn-default hvr-hover btn-cart">Xem giỏ hàng</a>
-                        <span class="float-right"><strong>Total</strong>: $180.00</span>
-                    </li>
-                </ul>
-            </li>
-        </div>
-        <!-- End Side Menu -->
     </nav>
     <!-- End Navigation -->
    </header>
     <!-- End Main Top -->
+
+    <!-- Modal Login -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Đăng nhập</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('login') }}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email"
+                            value="" required>
+                    </div> 
+                    <div class="form-group">
+                        <input type="password" class="form-control"
+                            name="password" placeholder="Mật khẩu" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark btn-block">Đăng nhập</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+             <a class="text-success mr-auto" data-toggle="modal" data-dismiss="modal" href="#modalSignup">Đăng ký ngay!</a>
+                <a class="text-danger ml-auto" href="#">Quên mật khẩu?</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal Login -->
+
+<!-- Modal Signup -->
+<div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" aria-modal="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Đăng ký</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" class="form-control"
+                            name="name" placeholder="Tên hiển thị" required>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control"
+                            name="email" placeholder="Email" required>
+                                  
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control"
+                            name="password" placeholder="Mật khẩu" required>           
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password_confirmation"
+                            placeholder="Xác nhận mật khẩu" required>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Đăng ký</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                Hoặc&nbsp;<a class="text-success mr-auto" data-toggle="modal" data-dismiss="modal" href="#modalLogin">Đăng nhập!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal Signup -->
 
 @include('pages.search')
 
